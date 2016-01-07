@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Car {
+public class Car extends Vehicle{
 	
 	int numberOfSeats;
 
@@ -14,7 +14,7 @@ public class Car {
 	}
 
 	public void move(int miles) {
-		super.move();
+		super.move(miles);
 		System.out.println("Car is moving, feel the breeze");
 	}
 }

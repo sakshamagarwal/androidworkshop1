@@ -6,4 +6,11 @@ public class Vehicle {
 	String regNo;
 	int numberOfMilesTravelled;
 
+	public Vehicle (int wheels, String reg, int miles) {
+		numberOfWheels = wheels;
+		regNo = reg;
+		numberOfMilesTravelled = miles;
+	}
+
+	
 }

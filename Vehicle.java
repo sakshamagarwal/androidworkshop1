@@ -12,5 +12,17 @@ public class Vehicle {
 		numberOfMilesTravelled = miles;
 	}
 
+	public String getRegNumber() {
+		return regNo;
+	}
+
+	public int getNumberOfWheels() {
+		return numberOfWheels;
+	}
+
+	public int getMilesTravelled() {
+		return numberOfMilesTravelled;
+	}
+
 	
 }

@@ -9,5 +9,12 @@ public class Car {
 		numberOfSeats = seats;
 	}
 
-	
+	public int getNumberOfSeats() {
+		return numberOfSeats;
+	}
+
+	public void move(int miles) {
+		super.move();
+		System.out.println("Car is moving, feel the breeze");
+	}
 }

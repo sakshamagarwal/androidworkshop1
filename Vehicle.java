@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Vehicle {
 	
-	int numberOfWheels;
-	String regNo;
-	int numberOfMilesTravelled;
+	private int numberOfWheels;
+	private String regNo;
+	private int numberOfMilesTravelled;
 
 	public Vehicle (int wheels, String reg, int miles) {
 		numberOfWheels = wheels;
@@ -24,5 +24,8 @@ public class Vehicle {
 		return numberOfMilesTravelled;
 	}
 
-	
+	public void move(int miles) {
+		numberOfMilesTravelled += miles;
+	}
+
 }

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class Vehicle {
+public class Vehicle implements Movable {
 	
 	private int numberOfWheels;
 	private String regNo;
@@ -24,6 +24,8 @@ public abstract class Vehicle {
 		return numberOfMilesTravelled;
 	}
 
-	public abstract void move(int miles);
+	public void move(int miles) {
+		numberOfMilesTravelled += miles;
+	}
 
 }

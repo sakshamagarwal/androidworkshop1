@@ -14,7 +14,7 @@ public class Car extends Vehicle{
 	}
 
 	public void move(int miles) {
-		super.move(miles);
+		//super.move(miles);
 		System.out.println("Car is moving, feel the breeze");
 	}
 }

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Vehicle {
+public abstract class Vehicle {
 	
 	private int numberOfWheels;
 	private String regNo;
@@ -24,8 +24,6 @@ public class Vehicle {
 		return numberOfMilesTravelled;
 	}
 
-	public void move(int miles) {
-		numberOfMilesTravelled += miles;
-	}
+	public abstract void move(int miles);
 
 }

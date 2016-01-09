@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Android Workshop</title>
+
+	<meta name="description" content="Android workshop">
+		<meta name="author" content="CSEA, NITC">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><font color="yellow">A Workshop on Android Development</font></h1>
+					<p> <a href="http://www.facebook.com/CSEA.NITC">Organized by CSEA</a></p>
+					<small>Press 'F' for Fullscreen</small>
+					<br>
+					<small>Press <em>Space</em> to navigate the presentation</small>
+				</section>
+
+				<section style="text-align: left;">
+					<h2>Agenda</h2>
+					<p>
+						<a href="introWorkshop.html">Introduction to the Workshop</a><br />
+						<a href="introJava.html">Introduction to Java (Week 0)</a><br />
+						<a href="http://athena.nitc.ac.in/saksham_b130917cs/AndroidWorkshop/">Installing Java and Android Studio</a><br />
+
+					</p>
+					<p>
+						Other links will be added as the workshop progresses further
+					</p>
+					<br>
+					<small>Clicking on one of the above will take you to the required section</small>
+				</section>
+				
+				<section>
+					<h2>Dont forget to Join the group</h2>
+	
+					<p><a href="http://www.facebook.com/groups/nitcdroid">NITC Droid Facebook Group</a></p><br>
+
+					<small>Clicking above will take you to the Facebook group. Join this group.</small>
+
+
+				</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

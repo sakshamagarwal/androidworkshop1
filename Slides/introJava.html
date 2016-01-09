@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Java</title>
+
+		<meta name="description" content="Android Development Workshop by CSEA">
+		<meta name="author" content="CSEA">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><font color="yellow">Java</font></h1>
+					<h3>A basic Introduction for Android Development</h3>
+					<p>
+						<small>Created by <a href="http://github.com/sakshamagarwal">Saksham Agarwal</a> / <a href="http://github.com/pbhopalka">Piyush Bhopalka</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Limitations of Procedural Programming</h2>
+					<h2 class="fragment"><font color="yellow">Introduction to Structures</font></h2>
+          <h2 class="fragment">Classes and Objects</h2>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+
+
+
+
+        <section>
+          <h2>Lets get started</h2>
+          <br>
+          <p>A customary program</p>
+        </section>
+
+
+      	<section>
+					<h2>Hello World Program</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public class MyFirstProgram {
+
+  public static void main(String[] args) {
+	System.out.println("Hello World!");
+  }
+
+}
+					</code></pre>
+				</section>
+
+        <section>
+          <h2>Compiling Java Code</h2>
+          <p>
+            Type <font color = "red">javac &lt;filename.java&gt;</font> and press enter
+          </p>
+          <p>
+            Then type <font color = "red">java &lt;filename&gt;</font> and press enter
+          </p>
+          <br>
+          <pre><code data-trim contenteditable>
+user:~$ javac MyFirstProgram.java
+user:~$ java MyFirstProgram
+          </code></pre>
+        </section>
+
+				<section>
+					<h2><font color='yellow'>Some Practice</font></h2>
+					<p class="fragment">1. Find the sum of even numbers between 1 to 100</p>
+					<p class="fragment">2. Find the maximum in the array a[ ] = {4, 7, 5, 3, 1}</p>
+				</section>
+
+				<section>
+					<h2>Declaring Class - Example 1</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public class Vehicle {
+  private int numberOfWheels;
+  private String regNo;
+  private int numberOfMilesTravelled;
+
+  public Vehicle (int wheels, String reg, int miles) {
+    numberOfWheels = wheels;
+    regNo = reg;
+    numberOfMilesTravelled = miles;
+  }
+
+  .....Remaining Codes.........
+
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Add Selectors - Example 1</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public class Vehicle {
+
+  ....Variable declarations
+
+  public Vehicle (int wheels, String reg, int miles) {}
+
+  public String getRegNumber() {
+    return regNo;
+  }
+
+  public int getNumberOfWheels() {
+	   return numberOfWheels;
+   }
+
+  public int getMilesTravelled() {
+    return numberOfMilesTravelled;
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Adding functions to a class - Example 1</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public class Vehicle {
+
+	....Variable declarations
+
+	----Constructor function----
+
+	----Selector functions-----
+
+	public void move(int miles) {
+		numberOfMilesTravelled += miles;
+	}
+}
+					</code></pre>
+
+				</section>
+
+        <section>
+					<h2>Check your entire code - Example 1</h2>
+					<br>
+          <p>The source-code of the Vehicle class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/273556b9916d4189c535f7b39f160d8689d3e83e/Vehicle.java">here</a></p>
+				</section>
+
+        <section>
+          <h2><font color="red">PROJECT 1.1</font></h2>
+          <p>Create a class Human with the following properties:</p><br>
+          <ul>
+            <li>Each human has a name, contact number and age</li>
+            <li>Each human introduces himself as "My name is Sheldon Cooper. I am 25 years old and my contact is 11111."</li>
+            <li>Create appropriate constructors and selectors</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Inheritance</font>
+        </section>
+
+				<section>
+					<h2>Declaring a class - Example 2</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+import java.util.*;
+
+public class Car extends Vehicle{
+  int numberOfSeats;
+
+  public Car(int wheels, String reg, int miles, int seats) {
+    super(wheels, reg, miles);
+    numberOfSeats = seats;
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Add Selector - Example 2</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+import java.util.*;
+
+public class Car extends Vehicle{
+
+  int numberOfSeats;
+
+  public Car(int wheels, String reg, int miles, int seats) {}
+
+  public int getNumberOfSeats() {
+    return numberOfSeats;
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Add member functions - Example 2</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+import java.util.*;
+
+public class Car extends Vehicle{
+
+  .....Variable declaration
+
+  ----Constructor function----
+
+  ----Selector function----
+
+  public void move(int miles) {
+    super.move(miles);
+    System.out.println("Car is moving, feel the breeze");
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+        <section>
+          <h2>Check your entire code - Example 2</h2>
+          <br>
+          <p>The source-code of the Car class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/273556b9916d4189c535f7b39f160d8689d3e83e/Car.java">here</a></p>
+        </section>
+
+        <section>
+          <h2><font color="red">PROJECT 1.2</font></h2>
+          <p>Extend the class Superhero as a subclass of Human.</p><br>
+          <ul>
+            <li>Add a String field that stores the hero's alter ego!</li>
+            <li>Modify the given constructor by adding the alter ego as an additional parameter and setting it.</li>
+            <li>Override the introduce() method to ALSO include the alter ego! (In other words, you should call the superclass introduce method when you override the method.)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Abstract Classes</h3>
+        </section>
+
+        <section>
+					<h2>Implement Abstract Classes</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public abstract class Vehicle {
+
+	....Variable declarations
+
+	----Constructor function----
+
+	----Selector functions-----
+
+  public abstract void move(int miles);
+
+}
+					</code></pre>
+				</section>
+
+        <section>
+					<h2>Implement Abstract Class (Continued)</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+import java.util.*;
+
+public class Car extends Vehicle{
+
+  .....Variable declaration
+
+  ----Constructor function----
+
+  ----Selector function----
+
+  public void move(int miles) {
+    //super.move(miles);      ->Remove this line
+    System.out.println("Car is moving, feel the breeze");
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+        <section>
+          <h2>Check code for abstract class</h2>
+          <br>
+          <p>The source-code of the Vehicle abstract class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/master/Vehicle.java">here</a></p>
+          <p>The new source-code of the Car class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/master/Car.java">here</a></p>
+        </section>
+
+        <section>
+          <h3><font color="yellow">Interface</font></h3>
+        </section>
+
+        <section>
+					<h2>Implement Interface</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+interface Movable {
+  public void move(int miles);
+}
+					</code></pre>
+				</section>
+
+        <section>
+					<h2>Implement Interface (Continued)</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+public class Vehicle implements Movable {
+
+	....Variable declarations
+
+	----Constructor function----
+
+	----Selector functions-----
+
+  public void move(int miles){
+    numberOfMilesTravelled += miles;
+  }
+
+}
+					</code></pre>
+				</section>
+
+        <section>
+					<h2>Implement Interface (Continued)</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+import java.util.*;
+
+public class Car extends Vehicle{
+
+  .....Variable declaration
+
+  ----Constructor function----
+
+  ----Selector function----
+
+  public void move(int miles) {
+    super.move(miles);      //<-Bring back this line
+    System.out.println("Car is moving, feel the breeze");
+  }
+
+}
+					</code></pre>
+
+				</section>
+
+        <section>
+          <h2>Check code for Interface</h2>
+          <br>
+          <p>The source-code of Movable interface is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/interfaces/Movable.java">here</a></p>
+          <p>The source-code of the Vehicle class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/interfaces/Vehicle.java">here</a></p>
+          <p>The new source-code of the Car class is available <a href = "https://github.com/sakshamagarwal/androidworkshop1/blob/interfaces/Car.java">here</a></p>
+        </section>
+
+        <section>
+          <h2><font color="red">PROJECT 1.3</font></h2>
+          <p>Give super powers to super humans</p><br>
+        </section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- That's it for Week 0<br>
+						- Make sure Android Studio is properly installed before the next session<br>
+            - The workshop will have a fully reimbursable fee of Rs. 100-200. Only under the completion of the workshop will the <thead>
+              amount be returned.
+            </thead>
+					</p>
+          <p><a href = "index.html#/1">Back to Home page</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

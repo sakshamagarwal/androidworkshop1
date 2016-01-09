@@ -1,4 +1,4 @@
-public class SuperHero extends Human{
+public abstract class SuperHero extends Human{
 	
 	private String alterEgo;
 
@@ -11,9 +11,12 @@ public class SuperHero extends Human{
 		return alterEgo;
 	}
 
+	@Override
 	public String introduce() {
 		return super.introduce() + " I'm also known as " + alterEgo + "!";
 	}
+
+	public abstract void executeSuperPower();
 
 	/* With inheritence we can easily use all the features that we have already built in our Human Class.
 	We save ourseleves from rewriting a lot of code and also its much easier to read and understand the code. :)*/

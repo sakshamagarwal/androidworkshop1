@@ -29,7 +29,8 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/plus"
-        android:layout_below="@id/input2"/>
+        android:layout_below="@id/input2"
+        android:onClick="calculate"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -37,7 +38,8 @@
         android:text="-"
         android:id="@+id/minus"
         android:layout_below="@id/input2"
-        android:layout_toRightOf="@id/plus"/>
+        android:layout_toRightOf="@id/plus"
+        android:onClick="calculate"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
         android:text="*"
         android:id="@+id/mul"
         android:layout_below="@id/input2"
-        android:layout_toRightOf="@id/minus"/>
+        android:layout_toRightOf="@id/minus"
+        android:onClick="calculate"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -53,7 +56,8 @@
         android:text="/"
         android:id="@+id/div"
         android:layout_below="@id/input2"
-        android:layout_toRightOf="@id/mul"/>
+        android:layout_toRightOf="@id/mul"
+        android:onClick="calculate"/>
 
     <TextView
         android:layout_width="wrap_content"

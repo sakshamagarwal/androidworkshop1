@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>XML, Views, Activity, Intents</title>
+
+		<meta name="description" content="Android Development Workshop by CSEA">
+		<meta name="author" content="CSEA">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><font color="yellow">XML, Views, Activity, Intents</font></h1>
+					<h3>A basic Introduction</h3>
+					<p>
+						<small>Created by <a href="http://github.com/sakshamagarwal">Saksham Agarwal</a> / <a href="http://github.com/pbhopalka">Piyush Bhopalka</a></small>
+					</p>
+				</section>
+
+        <section>
+          <h2>Understanding Android Studio</h2>
+        </section>
+
+				<section>
+					<h2><font color="yellow">XML and Views in Android</font></h2>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+
+        <section data-markdown>
+          <script type="text/template">
+            ## TextView in XML
+            ```
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/my_text_view"/>
+            ```
+          </script>
+        </section>
+
+				<section>
+					<h2>Getting reference from XML for TextView</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+
+TextView tv = (TextView)findViewById(R.id.my_text_view);
+
+tv.setText("Hello text view");
+
+					</code></pre>
+				</section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## EditText in XML
+            ```
+            <EditText
+              android:layout_width="150dp"
+              android:layout_height="50dp"
+              android:id="@+id/my_edit_text"/>
+            ```
+          </script>
+        </section>
+
+        <section>
+          <h2>Getting reference from XML for EditText</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+
+EditText editText = (EditText)findViewById(R.id.my_edit_text);
+
+String s = editText.getText().toString();
+
+          </code></pre>
+        </section>
+
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Buttons in XML
+            ```
+            <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/my_button"/>
+            ```
+          </script>
+        </section>
+
+        <section>
+          <h2>Getting reference from XML for Button</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+
+Button b = (Button)findViewById(R.id.my_button);
+
+b.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View v) {
+    /* Whatever you may want to do on Click */
+  }
+});
+        </code></pre>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Make a simple Calculator</font></h2>
+            <p>Two EditTexts For input</p>
+            <p>Four buttons, one each for basic arithmetic operations</p><br>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Make a simple Calculator</font></h2>
+            <p>After completion, check to see if you have done the same as <a href="https://github.com/sakshamagarwal/androidworkshop1/tree/Calculator-Method1">here</a></p>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Writing better code for Calculator</font></h2>
+            <p>The same code can be written efficiently like <a href="https://github.com/sakshamagarwal/androidworkshop1/tree/Calculator-Method2">this</a></p>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Activity and Intents</font></h2>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Making a new Activity</font></h2>
+          <p>Choose Empty Activity, not Blank Activity</p>
+          <a href="images/empty_activity.png">
+            <img width="1000" height="500" data-src="images/empty_activity.png" alt="Empty Activity">
+          </a>
+        </section>
+
+        <section>
+          <h2>Calling the Activity that we just created</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+
+Intent i = new Intent(MainActivity.this, Activity2.class);
+
+startActivity(i);
+        </code></pre>
+        </section>
+
+        <section>
+          <h2>Attaching data to your intent from the calling activity</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+
+Intent i = new Intent(MainActivity.this, Activity2.class);
+
+i.putExtra("my_key", "The text to be passed");
+
+startActivity(i);
+
+        </code></pre>
+        </section>
+
+        <section>
+          <h2>Receiving data at the callee activity</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+Intent i = getIntent();
+
+String s = i.getStringExtra("my_key");
+        </code></pre>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Intents</font></h2>
+          <p>Explicit Intents - Intents within an app</p>
+          <p>Implicit Intents - Intents sent to another app on your device</p>
+        </section>
+
+        <section>
+          <h2>Making Implicit Intents</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+String url = "http://www.facebook.com/groups/nitcdroid";
+
+Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+
+startActivity(i);
+        </code></pre>
+        </section>
+
+        <section>
+          <h2>Providing a choice for choosing apps</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+String url = "http://www.facebook.com/groups/nitcdroid";
+
+Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+
+startActivity(Intent.createChooser(i, "Visit NITC-Droid using"));
+
+        </code></pre>
+      </section>
+
+        <section>
+          <h2><font color="yellow">PROJECT 2</font></h2>
+          <p>Create a Contacts app which displays several contacts each having:</p>
+          <ul>
+            <li>Contact image</li>
+            <li>Contact Name</li>
+            <li>Phone number</li>
+          </ul>
+          <p><font color="red"><strong>Optional: </strong>Clicking on the contact should open dialer with that number</font></p>
+          <small>Next slide contains a demo of how the app should look like</small>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Demo of the Project</font></h2>
+          <p>Your app should look something like this:</p>
+          <a href="images/contacts_demo.jpg">
+            <img width="300" height="500" data-src="images/contacts_demo.jpg" alt="Contacts App Demo">
+          </a>
+        </section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- That's it for Week 1<br>
+						- We just barely scratched through the tip of a few things. Self study is going to be the key.<br>
+            - For deeper understanding, go through the Udacity Course or the Android Developer Website.<br>
+            - Next week we will dive a little deeper into Views
+					</p>
+          <p><a href = "index.html#/1">Back to Home page</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

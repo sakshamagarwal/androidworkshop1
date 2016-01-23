@@ -9,6 +9,8 @@ This presentation has been built by using a HTML framework [reveal.js](http://la
 Reference has been taken from courses on Udacity, Android Developer website and Stack Overflow.
 For any further queries, contact the CSEA, NIT Calicut facebook page.
 
+Several inputs have been taken from [Suraj Yadav](https://www.facebook.com/profile.php?id=100008243947665) and [Anshul Chokhani](https://github.com/anshulchokhani) as well.
+
 --
 
 # reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js)

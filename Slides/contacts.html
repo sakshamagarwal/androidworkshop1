@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Building the Contacts App</title>
+
+		<meta name="description" content="Android Development Workshop by CSEA">
+		<meta name="author" content="CSEA">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><font color="yellow">Building the Contacts App (Without Database)</font></h1>
+					<h4>Introducing some basic concepts</h4>
+					<p>
+						<small>Created by <a href="http://github.com/sakshamagarwal">Saksham Agarwal</a> / <a href="http://github.com/pbhopalka">Piyush Bhopalka</a></small>
+					</p>
+				</section>
+
+        <section>
+          <h2>Understanding File Structure</h2>
+          <p><font color="red">manifest</font></p>
+          <p><font color="red">java</font></p>
+          <p><font color="red">res</font></p>
+          <small>All XML files are stored in <strong>res/layout</strong></small><br>
+          <small>Most images used in the project will be stored in <strong>res/drawables</strong></small>
+        </section>
+
+				<section>
+          <a href="images/layouts_contact.jpg">
+					<h2><font color="yellow">Understanding the layouts used in the app</font></h2>
+            <img width="1000" height="500" data-src="images/layouts_contact.jpg" alt="Layouts for Contact App">
+          </a>
+          <small>For those who have attended the session should understand the image</small>
+				</section>
+
+        <section>
+          <h2><font color="yellow">Referencing from <strong>res</strong> to <strong>java</strong></font></h2>
+          <p><font color="red">R.drawable.&lt;image_id&gt;</font> - For images</p>
+          <p><font color="red">R.layout.&lt;layout_id&gt;</font> - For XML files</p>
+          <p><font color="red">R.id.&lt;view_id&gt;</font> - For Views (elements) inside a layout (XML file)</p>
+        </section>
+
+				<section>
+					<p>For reference,</p>
+					<p>The XML code for the contacts.xml and main_activity.xml are <a href="https://github.com/sakshamagarwal/Contacts-app/tree/master/app/src/main/res/layout">here</a>.
+				</section>
+
+        <section>
+          <h2>Working on the Java Part</h2>
+        </section>
+
+        <section>
+          <p>Let's first create a new Java file that defines each contact</p>
+          <p>We call it <strong>Human.java</strong></p>
+        </section>
+
+        <section>
+          <p>Code for <strong>Human.java</strong> is <a href = "https://github.com/sakshamagarwal/Contacts-app/blob/master/app/src/main/java/com/example/saksham/contacts/Human.java">here</a></p>
+        </section>
+
+				<section>
+					<h3>Sample Images for the Project</h3>
+					<p>Download the images from <a href="contact_images.zip">here</a>. Put them in the <strong>res/drawables</strong> folder.
+				</section>
+
+				<section>
+          <h2><font color="yellow">Let's complete MainActivity.java</font></h2>
+          <ul>
+            <li>First declare all the names as an object of class Human</li>
+            <li>Put them all in an ArrayList</li>
+            <li>Iteratively, populate the elements (objects) to the LinearLayout View</li>
+            <li>Add an intent to the RelativeLayout such that whenever it is clicked, ACTION_DIAL is invoked</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><font color="yellow">Let's complete MainActivity.java</font></h2>
+          <p>For reference, code is available <a href="https://github.com/sakshamagarwal/Contacts-app/blob/master/app/src/main/java/com/example/saksham/contacts/MainActivity.java">here</a>. But we suggest you to type it out yourself atleast.</p>
+        </section>
+
+        <section>
+          <h3><font color="yellow">Now run your app!</font></h3>
+          <p class=fragment>Voila! You have built your Contacts App</p>
+        </section>
+
+				<section>
+          <h2><font color="yellow">Demo of the Project</font></h2>
+          <p>Your app should look something like this:</p>
+          <a href="images/contacts_demo.jpg">
+            <img width="300" height="500" data-src="images/contacts_demo.jpg" alt="Contacts App Demo">
+          </a>
+        </section>
+        <!-- Example of nested vertical slides -->
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
